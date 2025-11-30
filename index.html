@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Wiki interactiva de Day R Survival con guías, crafting y mapas actualizados.">
+  <title>Day R Survival Wiki SPA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-3fpdp8HkdP0nHHO6PFUJ0cDPLs5c5/JmqDkqX29v8KQ=" crossorigin="anonymous"></script>
+  <script defer src="js/translations.js"></script>
+  <script defer src="js/cache.js"></script>
+  <script defer src="js/router.js"></script>
+  <script defer src="js/search.js"></script>
+  <script defer src="js/app.js"></script>
+</head>
+<body>
+  <div class="layout">
+    <header class="header" role="banner">
+      <div class="header__brand">
+        <img src="assets/compass.svg" alt="Brújula" class="header__logo" aria-hidden="true">
+        <div>
+          <p class="header__kicker" data-i18n="site.kicker">Day R Survival</p>
+          <h1 class="header__title" data-i18n="site.title">Wiki interactiva</h1>
+        </div>
+      </div>
+      <div class="header__actions">
+        <button class="button button--ghost" id="theme-toggle" aria-label="Cambiar tema" data-i18n="actions.theme">Tema</button>
+        <select id="language-switcher" aria-label="Cambiar idioma" class="select">
+          <option value="es">ES</option>
+          <option value="en">EN</option>
+        </select>
+      </div>
+    </header>
+
+    <nav class="nav" role="navigation" aria-label="Navegación principal">
+      <ul class="nav__list" id="nav-list">
+        <li><a href="#/inicio" class="nav__link" data-route="inicio" data-i18n="nav.home">Inicio</a></li>
+        <li><a href="#/crafting" class="nav__link" data-route="crafting" data-i18n="nav.crafting">Crafting</a></li>
+        <li><a href="#/objetos" class="nav__link" data-route="objetos" data-i18n="nav.items">Objetos</a></li>
+        <li><a href="#/personaje" class="nav__link" data-route="personaje" data-i18n="nav.character">Personaje</a></li>
+        <li><a href="#/guia" class="nav__link" data-route="guia" data-i18n="nav.guide">Guía</a></li>
+        <li><a href="#/supervivencia" class="nav__link" data-route="supervivencia" data-i18n="nav.survival">Supervivencia</a></li>
+        <li><a href="#/mapa" class="nav__link" data-route="mapa" data-i18n="nav.map">Mapa</a></li>
+        <li><a href="#/actualizaciones" class="nav__link" data-route="actualizaciones" data-i18n="nav.updates">Actualizaciones</a></li>
+      </ul>
+      <div class="search" role="search">
+        <label for="search-input" class="sr-only" data-i18n="actions.searchLabel">Buscar en la wiki</label>
+        <input type="search" id="search-input" class="search__input" placeholder="Buscar..." autocomplete="off" data-i18n-placeholder="actions.searchPlaceholder">
+        <div class="search__results" id="search-results" role="listbox" aria-live="polite"></div>
+      </div>
+    </nav>
+
+    <main class="main" id="app" role="main">
+      <section class="panel panel--loading" id="loading-panel" hidden>
+        <div class="state state--loading" data-i18n="states.loading">Cargando contenido...</div>
+      </section>
+      <section class="panel" id="content-panel"></section>
+      <section class="panel panel--muted" id="empty-panel" hidden>
+        <div class="state state--empty" data-i18n="states.empty">No hay resultados disponibles.</div>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <p data-i18n="footer.note">Comunidad Day R Survival · Actualizado para versión 1.999</p>
+      <div class="footer__links">
+        <a href="#/actualizaciones" data-i18n="footer.updates">Historial de versiones</a>
+        <a href="#/guia" data-i18n="footer.gettingStarted">Guía para empezar</a>
+        <a href="#/mapa" data-i18n="footer.map">Mapa interactivo</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
