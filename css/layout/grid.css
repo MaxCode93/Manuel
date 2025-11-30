@@ -1,0 +1,29 @@
+.layout {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  min-height: 100vh;
+  background: var(--gradient-hero);
+  padding: var(--spacing-xs);
+  gap: var(--spacing-xs);
+}
+
+.main {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: var(--spacing-xs);
+}
+
+.panel {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xs);
+  box-shadow: var(--shadow-sm);
+}
+
+.panel--loading,
+.panel--muted {
+  display: grid;
+  place-items: center;
+  min-height: 160px;
+}

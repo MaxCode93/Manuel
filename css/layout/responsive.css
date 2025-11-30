@@ -1,0 +1,36 @@
+@media (max-width: 1024px) {
+  .nav {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout {
+    padding: var(--spacing-2xs);
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header__actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .nav__link {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav__list {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .header__logo {
+    width: 48px;
+    height: 48px;
+  }
+}

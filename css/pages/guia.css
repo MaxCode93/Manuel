@@ -1,0 +1,22 @@
+.timeline {
+  border-left: 2px solid var(--color-border);
+  padding-left: 1rem;
+  display: grid;
+  gap: var(--spacing-xs);
+}
+
+.timeline__item {
+  position: relative;
+  padding-left: 0.75rem;
+}
+
+.timeline__item::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  left: -1.05rem;
+  top: 0.35rem;
+}
